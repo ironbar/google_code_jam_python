@@ -9,6 +9,10 @@ This repository contains:
 The goal is to improve my algorithmic skills and to see if python can be a competitive language.
 The statistics so far so that the best competitors use mainly C++.
 
+The strategy will be to always write a working solution for every problem I try to solve. I might
+look into the analysis section if needed but I should always write a working solution. If I only
+read the analysis but not write a solution I will not learn anything.
+
 ## Testing the solutions
 
 ```bash
