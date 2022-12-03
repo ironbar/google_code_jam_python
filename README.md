@@ -35,6 +35,11 @@ The known python dependencies are: `numpy, scipy`
 
 [Dynamic programming by favtutor](https://favtutor.com/blogs/dynamic-programming)
 
+Toy problems:
+
+- Fibonacci
+- Grid traveler
+
 Sample problems:
 
 - [Spiralling into control](https://codingcompetitions.withgoogle.com/codejam/round/00000000008778ec/0000000000b15a74)
