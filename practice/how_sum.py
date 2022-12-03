@@ -15,3 +15,5 @@ def how_sum(target, numbers):
             return ret + [number]
 
 print(how_sum(8, (5, 3)))
+print(how_sum(47, (10, 5, 3)))
+print(how_sum(47, (3, 5, 10)))
