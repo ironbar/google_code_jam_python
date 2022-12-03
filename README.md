@@ -12,8 +12,9 @@ The statistics so far so that the best competitors use mainly C++.
 ## Testing the solutions
 
 ```bash
+# run the script with input data
 cat input.txt | python code.py
-
+# run the script with input data and compare the output with the expected output
 cat input.txt | python code.py > pred.txt ; echo "Script output is: "; cat pred.txt; echo "Comparison with required output"; diff output.txt pred.txt; rm pred.txt
 ```
 
