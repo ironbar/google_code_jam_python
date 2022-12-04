@@ -47,21 +47,24 @@ def is_shortcut_available(room, n):
 # assert can_reach_center_with_desired_steps(8, 9)
 # assert can_reach_center_with_desired_steps(7, 8)
 
-assert not can_reach_center_with_desired_steps(3, 5**2)[0]
-assert can_reach_center_with_desired_steps(4, 5**2)[0]
-assert not can_reach_center_with_desired_steps(5, 5**2)[0]
-assert can_reach_center_with_desired_steps(6, 5**2)[0]
+# assert not can_reach_center_with_desired_steps(3, 5**2)[0]
+# assert can_reach_center_with_desired_steps(4, 5**2)[0]
+# assert not can_reach_center_with_desired_steps(5, 5**2)[0]
+# assert can_reach_center_with_desired_steps(6, 5**2)[0]
 
-for n in range(3, 10000, 2):
-    print(n)
-    assert can_reach_center_with_desired_steps(n - 1, n**2)[0]
-    assert not can_reach_center_with_desired_steps(n - 2, n**2)[0]
+# for n in range(3, 10000, 2):
+#     print(n)
+#     assert can_reach_center_with_desired_steps(n - 1, n**2)[0]
+#     assert not can_reach_center_with_desired_steps(n - 2, n**2)[0]
 
 
 t = int(input())
 for i in range(1, t + 1):
     n, k = [int(x) for x in input().split(' ')]
-    can_reach, path = can_reach_center_with_desired_steps(k, n**2)
+    if k % 2:
+        can_reach = False
+    else:
+        can_reach, path = can_reach_center_with_desired_steps(k, n**2)
     if can_reach:
         print(f"Case #{i}: {len(path)}")
         for room, shortcut in path[::-1]:
