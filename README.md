@@ -39,6 +39,7 @@ Toy problems:
 
 - Fibonacci
 - Grid traveler
+- Can sum, how sum and best sum
 
 Sample problems:
 
