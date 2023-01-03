@@ -44,3 +44,21 @@ Toy problems:
 Sample problems:
 
 - [Spiralling into control](https://codingcompetitions.withgoogle.com/codejam/round/00000000008778ec/0000000000b15a74)
+
+## 2023 New year Resolutions
+
+The following table summarizes what was needed on 2022 to pass the rounds.
+
+| Round         | Participants | Requirements to pass round |
+|---------------|--------------|----------------------------|
+| Qualification | ∞            | 30                         |
+| 1             | ∞            | 34/100 @ 1:51              |
+| 2             | 4500         | 25/100 @ 1:19              |
+| 3             | 1001         | 71/100 @ 1:28              |
+| Finals        | 26           |                            |
+
+- 2023 resolution: get to round 3. This might be achieved by solving 2 problems each round
+- 2024 resolution: get to final round. To achieve this I should be able to solve 3 problems in 2.5 hours.
+  Thus I need to be fast, experienced and to have good templates.
+
+To be able to achieve this goals I should do one challenge per week.
