@@ -29,10 +29,6 @@ cat input.txt | python code.py
 # run the script with input data and compare the output with the expected output
 cat input.txt | python code.py > pred.txt ; echo "Script output is: "; cat pred.txt; echo "Comparison with required output"; diff output.txt pred.txt; rm pred.txt
 """
-from functools import lru_cache
-import numpy as np
-import scipy
-
 
 def find_pascal_walk(path_length):
     walk = [[1, 1]]
@@ -40,7 +36,6 @@ def find_pascal_walk(path_length):
     while len(walk) < 500 and path_length > 0:
         row = walk[-1][0] + 1
         bin_representation = bin(path_length)[2:][::-1]
-        # print(walk, path_length, bin_representation[::-1])
         if len(bin_representation) > row - 1 and bin_representation[row - 1] == "1":
             row_cells = [[row, i + 1] for i in range(row)]
             if walk[-1][1] == 1:
@@ -54,12 +49,14 @@ def find_pascal_walk(path_length):
             else:
                 walk.append([row, walk[-1][1] + 1])
             path_length -= 1
-    print(walk, path_length, bin_representation[::-1])
     return walk
 
-# find_pascal_walk(6)
 
-# t = int(input())
-# for i in range(1, t + 1):
-#     path_length = int(input())
-#     print(f"Case #{i}: {find_pascal_walk(path_length)}")
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(1, t + 1):
+        path_length = int(input())
+        print(f"Case #{i}:")
+        for step in find_pascal_walk(path_length):
+            print(" ".join(map(str, step)))
+
