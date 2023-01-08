@@ -21,5 +21,5 @@ def get_cell_number(r, k):
     return get_cell_number(r - 1, k - 1) + get_cell_number(r - 1, k)
 
 # 18, 17, 9, 5
-walk_length = 1e6
+walk_length = 1e9
 plot_walk(walk_length)
