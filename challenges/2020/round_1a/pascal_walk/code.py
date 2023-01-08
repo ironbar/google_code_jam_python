@@ -35,8 +35,7 @@ def find_pascal_walk(path_length):
     path_length -= 1
     while len(walk) < 500 and path_length > 0:
         row = walk[-1][0] + 1
-        bin_representation = bin(path_length)[2:][::-1]
-        if len(bin_representation) > row - 1 and bin_representation[row - 1] == "1":
+        if take_row(row, path_length):
             row_cells = [[row, i + 1] for i in range(row)]
             if walk[-1][1] == 1:
                 walk.extend(row_cells)
@@ -50,6 +49,20 @@ def find_pascal_walk(path_length):
                 walk.append([row, walk[-1][1] + 1])
             path_length -= 1
     return walk
+
+
+def take_row(row, path_length):
+    # if 2**(row - 1) < path_length:
+    #     return True
+    # return False
+
+    bin_representation = bin(path_length)[2:][::-1]
+    if len(bin_representation) > row - 1 and bin_representation[row - 1] == "1":
+        return True
+    bin_representation = bin(path_length - 1)[2:][::-1]
+    if len(bin_representation) > row - 1 and bin_representation[row - 1] == "1":
+        return True
+    return False
 
 
 if __name__ == '__main__':
