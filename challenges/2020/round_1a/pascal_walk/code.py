@@ -57,7 +57,7 @@ def find_rows_that_the_path_takes(biggest_row, path_length):
     take_row = [True]
     path_length -= 2 ** (biggest_row - 1) + biggest_row - 1
     for row in range(biggest_row - 1, 0, -1):
-        if path_length >= 2 ** (row - 1):
+        if path_length + 1 >= 2 ** (row - 1):
             take_row.append(True)
             path_length -= 2 ** (row - 1) - 1
         else:
@@ -95,4 +95,3 @@ if __name__ == '__main__':
         print(f"Case #{i}:")
         for step in find_pascal_walk(path_length):
             print(" ".join(map(str, step)))
-
