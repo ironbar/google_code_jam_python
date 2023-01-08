@@ -29,6 +29,12 @@ into account the path that we have to travel to achieve to that row. So the equa
 take all the possible rows
 3. Finally add 1s if necessary to reach the required length, maybe we could skip this step
 
+So the keys of this challenge were:
+
+- Find a good representation of the problem. Reduce the problem to the rows
+- Find a good order to solve the problem (from biggest to smallest)
+
+
 # run the script with input data
 cat input.txt | python code.py
 # run the script with input data and compare the output with the expected output
