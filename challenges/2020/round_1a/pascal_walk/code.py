@@ -21,8 +21,13 @@ and only loop over the rows that have a 1 in the binary representation of the nu
 However there is a problem because when we go down we have to pass over rows that are not included in
 the binary representation and they sum 1.
 
-Maybe I can solve it iteratively. When I reach a certain row if that row is inside the binary representation
-of the remaining path. I could test this for smaller numbers and if it works it might work for larger numbers.
+After trying different approaches I have found a way to solve it:
+
+1. On a first step find what will be the biggest row that we can take for the walk. We have to take
+into account the path that we have to travel to achieve to that row. So the equation will be: `2**(r-1) + r - 1`
+2. On a second step find what rows we will take. We will go from the biggest row to the smallest and
+take all the possible rows
+3. Finally add 1s if necessary to reach the required length, maybe we could skip this step
 
 # run the script with input data
 cat input.txt | python code.py
