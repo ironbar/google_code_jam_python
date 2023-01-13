@@ -30,6 +30,8 @@ The known python dependencies are: `numpy, scipy`
 
 - [Google Code Jam — How To Prepare by Konopka Kodes](https://konopkakodes.medium.com/google-code-jam-study-guide-a8c58baf6397)
 - [▶️ Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk&t=1638s)
+- [Online judge](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3) is a web platform with
+  a lot of problems to solve. It is a good place to practice and to learn new algorithms.
 
 ### Dynamic programming
 
