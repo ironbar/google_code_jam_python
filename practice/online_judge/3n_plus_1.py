@@ -1,3 +1,7 @@
+"""
+3n + 1
+https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=0&problem=36&mosmsg=Submission+received+with+ID+28162822
+"""
 import sys
 from functools import lru_cache
 
