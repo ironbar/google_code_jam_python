@@ -6,6 +6,9 @@ I have the intuition that I have to use the matrix structure to preserve the loc
 My idea is to compute the average skill of the neighbors row by row, and then transpose and do the same for the columns. I will index using the alive competitors.
 I believe this will work although I'm not sure if it will be efficient enough.
 
+The following code pass test 1 but gets time limit exceeded for test 2.
+It is O(R**2 C**2 (R+C)) as it is said in the analysis.
+
 # run the script with input data
 cat input.txt | python code.py
 # run the script with input data and compare the output with the expected output
