@@ -24,6 +24,7 @@ read the analysis but not write a solution I will not learn anything.
 
 ```bash
 conda create -n google_code_jam python=3.7 numpy scipy matplotlib pypy -c conda-forge
+pip install snakeviz
 ```
 
 In the [FAQ](https://codingcompetitions.withgoogle.com/codejam/faq) I get the following documentation about the environments:

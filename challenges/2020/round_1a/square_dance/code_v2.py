@@ -8,6 +8,8 @@ it will allow to efficiently update the neighbors when dancers are eliminated.
 
 My first implementation gets time limit exceeded for test 2. Both with python and pypy.
 
+I might use https://jiffyclub.github.io/snakeviz/ to profile the code and see where the time is spent.
+
 # run the script with input data
 cat input.txt | python code.py
 # run the script with input data and compare the output with the expected output
