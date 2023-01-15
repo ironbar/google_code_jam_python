@@ -2,6 +2,10 @@
 Square dance
 https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd74/00000000002b1355
 
+I have the intuition that I have to use the matrix structure to preserve the location of the competitors.
+My idea is to compute the average skill of the neighbors row by row, and then transpose and do the same for the columns. I will index using the alive competitors.
+I believe this will work although I'm not sure if it will be efficient enough.
+
 # run the script with input data
 cat input.txt | python code.py
 # run the script with input data and compare the output with the expected output
@@ -12,7 +16,6 @@ import scipy.ndimage
 
 
 def get_competition_interest(dance_floor):
-    # print(dance_floor)
     is_alive = np.ones_like(dance_floor)
     interest = 0
     while True:
@@ -25,18 +28,18 @@ def get_competition_interest(dance_floor):
 
 
 def get_eliminated_competitors(dance_floor, is_alive):
-    # make a convolution with cells above, below, left and right
+    neighbors_average_skill = get_neighbors_average_skill(dance_floor, is_alive)
+    eliminated_competitors = np.logical_and(dance_floor < neighbors_average_skill, is_alive)
+    return eliminated_competitors
+
+
+def get_neighbors_average_skill(dance_floor, is_alive):
     kernel = np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]])
     neighbors_average_skill = scipy.ndimage.convolve(dance_floor*is_alive, kernel, mode='constant', cval=0.0)
     n_neighbors = scipy.ndimage.convolve(is_alive, kernel, mode='constant', cval=0.0)
     n_neighbors = np.maximum(n_neighbors, 1)
     neighbors_average_skill = neighbors_average_skill.astype(float)/n_neighbors
-    print()
-    print(dance_floor)
-    print(is_alive)
-    print(neighbors_average_skill)
-    eliminated_competitors = np.logical_and(dance_floor < neighbors_average_skill, is_alive)
-    return eliminated_competitors
+    return neighbors_average_skill
 
 
 if __name__ == '__main__':
