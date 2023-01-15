@@ -12,7 +12,6 @@ cat input.txt | python code.py
 cat input.txt | python code.py > pred.txt ; echo "Script output is: "; cat pred.txt; echo "Comparison with required output"; diff output.txt pred.txt; rm pred.txt
 """
 import numpy as np
-import scipy.ndimage
 
 
 def get_competition_interest(dance_floor):
@@ -46,13 +45,13 @@ def get_neighbors_average_skill(dance_floor, is_alive):
 def get_row_neighbors_sum_skill(dance_floor, is_alive):
     n_neighbors = np.zeros_like(dance_floor)
     neighbors_sum_skill = np.zeros_like(dance_floor)
-    kernel = np.array([1, 0, 1])
     for i in range(dance_floor.shape[0]):
         is_alive_condition = is_alive[i] == 1
-        # n_neighbors[i, is_alive_condition] = np.convolve(is_alive[i, is_alive_condition], kernel, mode='same')
-        # neighbors_sum_skill[i, is_alive_condition] = np.convolve(dance_floor[i, is_alive_condition], kernel, mode='same')
-        n_neighbors[i, is_alive_condition] = scipy.ndimage.convolve1d(is_alive[i, is_alive_condition], kernel, mode='constant')
-        neighbors_sum_skill[i, is_alive_condition] = scipy.ndimage.convolve1d(dance_floor[i, is_alive_condition], kernel, mode='constant')
+        is_alive_indices = np.arange(dance_floor.shape[1])[is_alive_condition]
+        n_neighbors[i, is_alive_indices[1:]] += 1
+        n_neighbors[i, is_alive_indices[:-1]] += 1
+        neighbors_sum_skill[i, is_alive_indices[1:]] += dance_floor[i, is_alive_indices[:-1]]
+        neighbors_sum_skill[i, is_alive_indices[:-1]] += dance_floor[i, is_alive_indices[1:]]
     return n_neighbors, neighbors_sum_skill
 
 

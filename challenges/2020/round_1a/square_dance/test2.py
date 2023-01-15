@@ -11,4 +11,5 @@ print(get_competition_interest(dance_floor))
 print(time.time() - start)
 """
 Initial implementation takes 2.43 seconds
+Replacing the convolutions by additons reduces the time to 1.42 seconds, but it's not enough to pass the challenge
 """
