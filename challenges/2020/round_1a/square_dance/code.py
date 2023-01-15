@@ -34,12 +34,27 @@ def get_eliminated_competitors(dance_floor, is_alive):
 
 
 def get_neighbors_average_skill(dance_floor, is_alive):
-    kernel = np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]])
-    neighbors_average_skill = scipy.ndimage.convolve(dance_floor*is_alive, kernel, mode='constant', cval=0.0)
-    n_neighbors = scipy.ndimage.convolve(is_alive, kernel, mode='constant', cval=0.0)
+    row_n_neighbors, row_neighbors_sum_skill = get_row_neighbors_sum_skill(dance_floor, is_alive)
+    col_n_neighbors, col_neighbors_sum_skill = get_row_neighbors_sum_skill(dance_floor.T, is_alive.T)
+    n_neighbors = row_n_neighbors + col_n_neighbors.T
+    neighbors_sum_skill = row_neighbors_sum_skill + col_neighbors_sum_skill.T
     n_neighbors = np.maximum(n_neighbors, 1)
-    neighbors_average_skill = neighbors_average_skill.astype(float)/n_neighbors
+    neighbors_average_skill = neighbors_sum_skill.astype(float)/n_neighbors
     return neighbors_average_skill
+
+
+def get_row_neighbors_sum_skill(dance_floor, is_alive):
+    n_neighbors = np.zeros_like(dance_floor)
+    neighbors_sum_skill = np.zeros_like(dance_floor)
+    kernel = np.array([1, 0, 1])
+    for i in range(dance_floor.shape[0]):
+        is_alive_condition = is_alive[i] == 1
+        # n_neighbors[i, is_alive_condition] = np.convolve(is_alive[i, is_alive_condition], kernel, mode='same')
+        # neighbors_sum_skill[i, is_alive_condition] = np.convolve(dance_floor[i, is_alive_condition], kernel, mode='same')
+        n_neighbors[i, is_alive_condition] = scipy.ndimage.convolve1d(is_alive[i, is_alive_condition], kernel, mode='constant')
+        neighbors_sum_skill[i, is_alive_condition] = scipy.ndimage.convolve1d(dance_floor[i, is_alive_condition], kernel, mode='constant')
+    return n_neighbors, neighbors_sum_skill
+
 
 
 if __name__ == '__main__':
