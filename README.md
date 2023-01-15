@@ -13,6 +13,33 @@ The strategy will be to always write a working solution for every problem I try 
 look into the analysis section if needed but I should always write a working solution. If I only
 read the analysis but not write a solution I will not learn anything.
 
+## Strategy
+
+- I should read each problem slowly two times taking notes. Pay attention to the examples to avoid
+  misunderstandings.
+- It may have sense to read all the problems at the start of the challenge and start by the problem
+  that seems easier.
+
+## Environment
+
+```bash
+conda create -n google_code_jam python=3.7 numpy scipy matplotlib pypy -c conda-forge
+```
+
+In the [FAQ](https://codingcompetitions.withgoogle.com/codejam/faq) I get the following documentation about the environments:
+
+```
+Python 3:
+3.7.3 (package: python3.7)
+ numpy 1.19.3 (pip install numpy)
+ scipy 1.5.3 (pip install scipy)
+ python3 Solution.py
+PyPy 3:
+7.0.0, Python 3.5.3 (package: pypy3)
+ numpy and scipy are unavailable
+ pypy3 Solution.py
+```
+
 ## Testing the solutions
 
 ```bash
