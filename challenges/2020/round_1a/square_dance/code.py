@@ -18,6 +18,7 @@ import numpy as np
 
 
 def get_competition_interest(dance_floor):
+    dance_floor = np.array(dance_floor)
     is_alive = np.ones_like(dance_floor)
     interest = 0
     while True:
