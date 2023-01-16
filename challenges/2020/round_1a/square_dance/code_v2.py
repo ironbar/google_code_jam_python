@@ -10,6 +10,11 @@ My first implementation gets time limit exceeded for test 2. Both with python an
 
 I might use https://jiffyclub.github.io/snakeviz/ to profile the code and see where the time is spent.
 
+I have created the script `time_complexity.py` and both v1 and v2 are O(RC), thus it seems that
+the problem is related to python, not to the time complexity of the algorithm.
+
+I could try to create an v3 version that is faster.
+
 # run the script with input data
 cat input.txt | python code.py
 # run the script with input data and compare the output with the expected output
