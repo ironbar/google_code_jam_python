@@ -19,12 +19,14 @@ read the analysis but not write a solution I will not learn anything.
   misunderstandings.
 - It may have sense to read all the problems at the start of the challenge and start by the problem
   that seems easier.
+- Using `snakeviz` to profile the code might help to optimize the code and pass the time limits.
 
 ## Environment
 
 ```bash
 conda create -n google_code_jam python=3.7 numpy scipy matplotlib pypy -c conda-forge
 pip install snakeviz
+pip install tqdm
 ```
 
 In the [FAQ](https://codingcompetitions.withgoogle.com/codejam/faq) I get the following documentation about the environments:
