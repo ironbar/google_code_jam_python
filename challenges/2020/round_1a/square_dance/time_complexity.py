@@ -5,6 +5,7 @@ from tqdm import tqdm
 
 from code import get_competition_interest
 from code_v2 import get_competition_interest as get_competition_interest_v2
+from code_v3 import get_competition_interest as get_competition_interest_v3
 
 def create_hard_dance_floor(rows, cols):
     dance_floor = [list(range(1, cols + 1))]
@@ -17,6 +18,7 @@ def create_hard_dance_floor(rows, cols):
 functions = {
     'v1': get_competition_interest,
     'v2': get_competition_interest_v2,
+    'v3': get_competition_interest_v3,
 }
 
 for version, function in functions.items():
