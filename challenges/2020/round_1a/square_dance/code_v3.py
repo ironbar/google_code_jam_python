@@ -13,7 +13,9 @@ I might use https://jiffyclub.github.io/snakeviz/ to profile the code and see wh
 I have created the script `time_complexity.py` and both v1 and v2 are O(RC), thus it seems that
 the problem is related to python, not to the time complexity of the algorithm.
 
-I could try to create an v3 version that is faster.
+I have found that the problem with v2 was that it was computing the interest each round using
+all the alive dancers. I have reduced the complexity of that operation and that passes the tests.
+So using snakeviz was a great idea.
 
 # run the script with input data
 cat input.txt | python code.py
