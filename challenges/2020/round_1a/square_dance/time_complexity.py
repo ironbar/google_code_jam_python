@@ -16,7 +16,7 @@ def create_hard_dance_floor(rows, cols):
 
 
 functions = {
-    'v1': get_competition_interest,
+    # 'v1': get_competition_interest,
     'v2': get_competition_interest_v2,
     'v3': get_competition_interest_v3,
 }
