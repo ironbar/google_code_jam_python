@@ -20,6 +20,8 @@ read the analysis but not write a solution I will not learn anything.
 - It may have sense to read all the problems at the start of the challenge and start by the problem
   that seems easier.
 - Using `snakeviz` to profile the code might help to optimize the code and pass the time limits.
+- Go trough the examples and the different levels of the problem. Usually they guide you to the
+  correct solution.
 
 ## Environment
 
