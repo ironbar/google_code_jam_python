@@ -92,6 +92,14 @@ def manhattan_distance(point1, point2):
 
 def throw_darts_around_the_center(xc, yc):
     throw_dart(xc, yc)
+    for radius in range(1, 10):
+        for x in range(xc - radius, xc + radius + 1):
+            throw_dart(x, yc - radius)
+            throw_dart(x, yc + radius)
+        for y in range(yc - radius + 1, yc + radius):
+            throw_dart(xc - radius, y)
+            throw_dart(xc + radius, y)
+
 
 
 
