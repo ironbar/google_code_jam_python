@@ -10,7 +10,10 @@ I have a limit of memory of 1GB, so I can't store all the points in memory.
 
 # run the script with input data
 python interactive_runner.py python3 testing_tool.py 0 -- python3 code.py
+python interactive_runner.py python3 testing_tool.py 1 -- python3 code.py
+python interactive_runner.py python3 testing_tool.py 2 -- python3 code.py
 """
+import random
 import sys
 
 def find_dartboard_center(a, b):
@@ -23,15 +26,28 @@ def find_dartboard_center(a, b):
 
 
 def find_point_inside_dartboard(min_radius, max_x=int(1e9)):
-    search_range = list(range(int(max_x//min_radius)))
-    search_range = set(search_range + [-x for x in search_range])
-    for x in search_range:
-        for y in search_range:
-            result = throw_dart(x, y)
-            if result == 'CENTER':
-                return None
-            if result == 'HIT':
-                return x, y
+    # search_range = list(range(int(max_x//min_radius)))
+    # search_range = set(search_range + [-x for x in search_range])
+    # for x in search_range:
+    #     for y in search_range:
+    while 1:
+        x = random.randint(-max_x + min_radius, max_x - min_radius)
+        y = random.randint(-max_x + min_radius, max_x - min_radius)
+        result = throw_dart(x, y)
+        if result == 'HIT' and verify_point_is_not_on_the_edge(x, y):
+            return x, y
+
+
+def verify_point_is_not_on_the_edge(x, y):
+    if throw_dart(x - 1, y) == 'MISS':
+        return False
+    if throw_dart(x + 1, y) == 'MISS':
+        return False
+    if throw_dart(x, y - 1) == 'MISS':
+        return False
+    if throw_dart(x, y + 1) == 'MISS':
+        return False
+    return True
 
 
 class Bullseye(Exception):
