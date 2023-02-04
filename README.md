@@ -64,6 +64,7 @@ The known python dependencies are: `numpy, scipy`
 - [▶️ Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk&t=1638s)
 - [Online judge](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3) is a web platform with
   a lot of problems to solve. It is a good place to practice and to learn new algorithms.
+- [Sorting algorithms](https://lamfo-unb.github.io/2019/04/21/Sorting-algorithms/)
 
 ### Dynamic programming
 
