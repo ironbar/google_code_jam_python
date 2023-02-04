@@ -53,6 +53,8 @@ They say that they are going to apply the operations while maintaining this rule
 cards X, Y either `Y = X` (already grouped) or `Y = (X + 1) % R`. This will ensure that when we minimize
 the differences between adjacent cards the deck will be sorted.
 
+I had to spend an entire morning on this problem. And strangely it only passes test set 1.
+
 # run the script with input data
 cat input.txt | python code.py
 # run the script with input data and compare the output with the expected output
@@ -117,8 +119,13 @@ def find_a_and_b(deck):
                 b = idx
                 break
 
+    # special ending case
     if b is None:
-        return 1, len(deck) - 1
+        for idx, value in enumerate(deck):
+            if value != x:
+                a = idx
+                break
+        return a, len(deck) - a
     return a, b
 
 
