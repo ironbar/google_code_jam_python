@@ -22,6 +22,7 @@ read the analysis but not write a solution I will not learn anything.
 - Using `snakeviz` to profile the code might help to optimize the code and pass the time limits.
 - Go trough the examples and the different levels of the problem. Usually they guide you to the
   correct solution.
+- Sometimes standing up and going for a little walk can allow you to solve the challenge
 
 ## Environment
 
